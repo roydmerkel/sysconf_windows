@@ -1801,7 +1801,7 @@ long sysconf(int name)
 				break;
 			case _SC_STREAM_MAX:
 				#if defined(_MSC_VER)
-					#if (_MSC_VER >= 1000)
+					#if (_MSC_VER >= 1010)
 						retVal = _getmaxstdio();
 					#else
 						retVal = 512;
