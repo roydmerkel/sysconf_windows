@@ -1803,8 +1803,10 @@ long sysconf(int name)
 				#if defined(_MSC_VER)
 					#if (_MSC_VER >= 1010)
 						retVal = _getmaxstdio();
+					#elif (_MSC_VER >= 1000)
+						retVal = 2048;
 					#else
-						retVal = 512;
+						retVal = 64;
 					#endif
 				#else
 					retVal = _getmaxstdio();
